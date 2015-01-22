@@ -15,14 +15,15 @@ And then execute:
 ## Response object
 
 It returns a Response object, with:
-	    - temp
-	    - humidity
-	    - pressure
-	    - temp_min
-	    - temp_max
-	    - unit
-	    - general_state
-	    - general_description
+* temp
+* humidity
+* pressure
+* temp_min
+* temp_max
+* unit
+* general_state
+* general_description
+
 Or, if there is an error:
 	    - error_code
 ## Usage
