@@ -3,7 +3,7 @@ require 'weather'
 
 class WeatherTest < Minitest::Test
 
-  def test_error_code
+  def test_error_code_model
     error_code = WeatherRequestError.new("test")
 
     #Testing error code
@@ -11,17 +11,25 @@ class WeatherTest < Minitest::Test
     assert_equal "test",
                  error_code.error_code
 
-    assert_equal "404",
-                 Weather.get_weather_by_city_name('egjegejerjigreijgjiergjirejigreijgerijg').error_code
     #Testing method missing for error code
-    assert_equal "There has been a 404 error",
-                 Weather.get_weather_by_city_name('egjegejerjigreijgjiergjirejigreijgerijg').pepe
 
     assert_equal "There has been a test error",
                  error_code.testing_method_missing_now
   end
 
-  def test_weather_info
+  def test_error_code_request
+
+    #Testing error code
+
+    assert_equal "404",
+                 Weather.get_weather_by_city_name('egjegejerjigreijgjiergjirejigreijgerijg').error_code
+    #Testing method missing for error code
+    assert_equal "There has been a 404 error",
+                 Weather.get_weather_by_city_name('egjegejerjigreijgjiergjirejigreijgerijg').pepe
+  end
+
+
+  def test_weather_info_model
     weather_info = WeatherInfo.new("1", "2", "3", "4", "5", "metric", "Cloudy", "is Cloudy")
 
     assert_equal "1",
