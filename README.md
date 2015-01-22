@@ -25,7 +25,8 @@ It returns a Response object, with:
 * general_description
 
 Or, if there is an error:
-	    - error_code
+* error_code
+
 ## Usage
 
 ###Getting info by city name
